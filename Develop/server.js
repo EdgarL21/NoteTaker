@@ -12,7 +12,7 @@ var PORT = process.env.PORT || 8080;
 // Middleware // lets us have access to our html css and js
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// this made it so public folder // this removed the first error
+// this made it so public folder could be used // this removed the first error
 app.use(express.static("public"));
 
 // app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'view.html')));
