@@ -42,8 +42,8 @@
   If you have any questions about the repo, open an issue or contact me directly at edgar21lc@gmail.com. You can find more of my work at https://github.com/EdgarL21
   <br>
   Contact me, my Github and email are above.
-  
-  <a target="_blank" href="./public/assets/NoteTaker.gif">
+
+  <a target="_blank" href="./public/assets/NoteTaker.gif"></a>
 
   <iframe src="https://drive.google.com/file/d/1STY8FfxqE3pu_xPjBLmVv59B_t7iAXd4/preview" width="640" height="480"></iframe>
 
