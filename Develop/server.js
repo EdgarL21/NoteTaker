@@ -26,7 +26,7 @@ app.get("/notes", (request, response) => {
 
 //gets the index.html page and displays in browser also if the url input doesnt have a route it'll default to this
 app.get("/", (request, response) => {
-  console.log("You are in the get * ");
+  console.log("You are in the get / ");
   response.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
@@ -75,6 +75,36 @@ app.post("/api/notes", (request, response) => {
   response.json(notes); // sends back a json object
 });
 
+app.delete("/api/notes/:id", (request, response) => {
+  console.log("You are in the delete request");
+
+  const notes = JSON.parse(fs.readFileSync("./db/db.json"));
+
+  // console.log('-----./db-----');
+  // console.log(./db/db.json)
+  // console.log('-----./db-----');
+
+  console.log("-----Parse-----");
+  console.log(fs.readFileSync("./db/db.json"));
+  console.log("-----Parse-----");
+
+  console.log("-----DELETE notes-----");
+  console.log(notes); // logs all the current objects before one being deleted
+  console.log("-----DELETE notes-----");
+
+  const delNote = notes.filter((rmvNote) => rmvNote.id !== request.params.id);
+  console.log("-----DELETE delNote-----");
+  console.log(delNote); // logs all the current obejcts left after one of them was deleted
+  console.log("-----DELETE delNote-----");
+
+  fs.writeFileSync("./db/db.json", JSON.stringify(delNote));
+  console.log("JSON.stringify(delNote)");
+  console.log(JSON.stringify(delNote)); // logs the current objects after one of them was deleted but all as a string
+  console.log("JSON.stringify(delNote)");
+
+  response.json(delNote);
+  console.log(response.json(delNote)); // logs the current objects after one of them was deleted but as json
+});
 
 console.log(__dirname);
 
